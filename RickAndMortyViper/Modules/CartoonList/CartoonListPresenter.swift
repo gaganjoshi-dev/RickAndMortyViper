@@ -9,7 +9,6 @@ import Foundation
 protocol CartoonListPresenterProtocol {
     func viewDidLoad()
     func didSelectCartoon(_ cartoon: Cartoon)
-    
 }
 
 

@@ -12,12 +12,9 @@ protocol CartoonListViewProtocol: AnyObject {
     func showError(_ message: String)
 }
 
-
 class CartoonListViewController: UIViewController, CartoonListViewProtocol, UITableViewDataSource, UITableViewDelegate {
     
-    
     var presenter: CartoonListPresenterProtocol?
-    
     
     private var cartoons: [Cartoon] = []
     private let tableView = UITableView()
@@ -28,7 +25,6 @@ class CartoonListViewController: UIViewController, CartoonListViewProtocol, UITa
         setupTableView()
         presenter?.viewDidLoad()
     }
-    
     
     private func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false

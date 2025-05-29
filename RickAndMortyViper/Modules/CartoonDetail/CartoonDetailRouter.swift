@@ -8,6 +8,10 @@
 import UIKit
 
 class CartoonDetailRouter: CartoonDetailRouterProtocol {
+    
+    weak var viewController: UIViewController?
+
+    
     static func createModule(with cartoonID: Int) -> UIViewController {
         let view = CartoonDetailViewController()
         let presenter = CartoonDetailPresenter()

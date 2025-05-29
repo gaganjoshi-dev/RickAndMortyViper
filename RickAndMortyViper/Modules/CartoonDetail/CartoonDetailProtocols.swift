@@ -20,5 +20,5 @@ protocol CartoonDetailInteractorProtocol {
 }
 
 protocol CartoonDetailRouterProtocol {
-    static func createModule(with cartoonID: Int) -> UIViewController
+    
 }

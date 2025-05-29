@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class CartoonTableViewCell: UITableViewCell {
     static let identifier = "CartoonTableViewCell"
     private var downloadTask: URLSessionDataTask?

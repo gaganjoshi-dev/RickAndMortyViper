@@ -13,18 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         let window = UIWindow(windowScene: windowScene)
         
-        let rootVC  = CartoonListRouter.createModule()
-
+        let rootVC  = CartoonListBuilder().build()
         window.rootViewController = UINavigationController(rootViewController: rootVC)
         window.makeKeyAndVisible()
         self.window = window
-        
-        
     }
     
     // Called when the scene becomes active
@@ -56,9 +51,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("Scene disconnected")
         // Release resources specific to this scene
     }
-    
-    
-    
-    
 }
 

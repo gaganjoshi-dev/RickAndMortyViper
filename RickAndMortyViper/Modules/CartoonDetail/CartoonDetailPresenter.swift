@@ -15,6 +15,11 @@ class CartoonDetailPresenter: CartoonDetailPresenterProtocol {
         interactor?.fetchCartoonDetail()
     }
 
+   
+}
+
+extension CartoonDetailPresenter : CartoonDetailInteractorOutputProtocol {
+    
     func cartoonDetailFetched(_ cartoon: CartoonDetail) {
         DispatchQueue.main.async {
             self.view?.showCartoonDetail(cartoon)
