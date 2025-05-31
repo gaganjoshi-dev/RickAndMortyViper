@@ -44,7 +44,14 @@ class CartoonListBuilder {
         // Create defaults if not set
         let view = self.view ?? CartoonListViewController()
         let apiClient = self.apiClient ?? APIClient()
-        let interactor = self.interactor ?? CartoonListInteractor(apiClient: apiClient)
+        
+        let isOnline = NetworkChecker.isConnected()
+
+        let repository: CartoonRepositoryProtocol = isOnline
+            ? RemoteCartoonRepository(apiClient: apiClient)
+            : LocalCartoonRepository()
+        let interactor = self.interactor ?? CartoonListInteractor(cartoonRepository: repository)
+        
         let presenter = self.presenter ?? CartoonListPresenter()
         let router = self.router ?? CartoonListRouter()
 

@@ -119,16 +119,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AA574D06-0A13-4954-9545-EF14DBD0367D"
+            uuid = "8E14B8E4-A4C2-4C99-8AF9-109FDB8E3594"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortyViper/Modules/CartoonList/CartoonListRouter.swift"
+            filePath = "RickAndMortyViper/Modules/CartoonList/CartoonRepositoryProtocol.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "navigateToCartoonDetail(from:with:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "fetchCartoons()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

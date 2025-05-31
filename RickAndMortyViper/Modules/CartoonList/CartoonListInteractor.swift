@@ -14,27 +14,28 @@ protocol CartoonInteractorOutputProtocol: AnyObject {
     func cartoonsFetchFailed(_ message: String)
 }
 
-
 class CartoonListInteractor: CartoonListInteractorProtocol {
     weak var output: CartoonInteractorOutputProtocol?
-
-    private let apiClient: APIClientProtocol
+    private let cartoonRepository: CartoonRepositoryProtocol
     
-    init(apiClient: APIClientProtocol = APIClient()) {
-        self.apiClient = apiClient
+    init(cartoonRepository: CartoonRepositoryProtocol = RemoteCartoonRepository()) {
+        self.cartoonRepository = cartoonRepository
     }
     
     
     func fetchCartoons() {
         Task {
             do {
-                let cartoons = try await apiClient.fetchCharacters(page: 1)
+                let cartoons = try await cartoonRepository.fetchCartoons()
                 output?.cartoonsFetched(cartoons)
             } catch {
                 output?.cartoonsFetchFailed(error.localizedDescription)
             }
         }
     }
+    
 }
+
+
 
 

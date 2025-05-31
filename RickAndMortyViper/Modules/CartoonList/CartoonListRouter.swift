@@ -20,7 +20,7 @@ class CartoonListRouter: CartoonListRouterProtocol {
         let detailVC = cartoonDetailBuilder.build()
         if let sourceVC = view as? UIViewController {
             sourceVC.navigationController?.pushViewController(detailVC, animated: true)
-            
         }
     }
 }
+

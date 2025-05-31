@@ -11,7 +11,9 @@ protocol CartoonListPresenterProtocol {
     func didSelectCartoon(_ cartoon: Cartoon)
 }
 
-
+// view -> presenter -> Interacrtor (business logic) -> Entity
+//         -> Router
+//get all cartoon // abc // All cartoon -> 100 -> 20 - currentmodule interactor -> parent interactor -> 20
 class CartoonListPresenter: CartoonListPresenterProtocol {
     weak var view: CartoonListViewProtocol?
     var interactor: CartoonListInteractorProtocol?
